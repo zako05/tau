@@ -6,6 +6,7 @@ const { chromium } = require('playwright');
   await page.goto('https://the-internet.herokuapp.com/forgot_password')
   const email = await page.$('#email')
   // .$ is deprecate, use page.locator() instead
+  // https://playwright.dev/docs/api/class-page#page-query-selector
   // const email = page.locator('#email')
   await email.type('zako05@gmail.com', { delay: 50 })
   await page.click('button#form_submit')
